@@ -36,6 +36,7 @@
     <button class="nav-btn" data-tab="days" type="button"><span class="icon">📅</span><span data-i18n="nav_days">行程</span></button>
     <button class="nav-btn" data-tab="tickets" type="button"><span class="icon">🎟️</span><span data-i18n="nav_tickets">門票</span></button>
     <button class="nav-btn" data-tab="cruise" type="button"><span class="icon">🚢</span><span data-i18n="nav_cruise">郵輪</span></button>
+    <button class="nav-btn" data-tab="checklist" type="button"><span class="icon">✅</span><span data-i18n="nav_checklist">待辦</span></button>
     <button class="nav-btn" data-tab="tips" type="button"><span class="icon">💡</span><span data-i18n="nav_tips">注意</span></button>
   </nav>
 
@@ -1045,13 +1046,57 @@
 
       <h3 class="section-title" data-i18n="checklist_title">行前檢查</h3>
       <div class="card">
-        <ul class="list-clean">
-          <li><span class="lang-zh">護照效期／影印</span><span class="lang-en">Passports + copies</span><strong data-i18n="must">必帶</strong></li>
-          <li><span class="lang-zh">土耳其 e-Visa ×6</span><span class="lang-en">Türkiye e-Visa ×6</span><strong data-i18n="todo">待辦</strong></li>
-          <li><span class="lang-zh">OceanReady + 行李吊牌</span><span class="lang-en">OceanReady + luggage tags</span><strong data-i18n="todo">待辦</strong></li>
-          <li><span class="lang-zh">歐元小鈔（尾款、小費、纜車）</span><span class="lang-en">EUR small notes</span><strong data-i18n="recommend">建議</strong></li>
-          <li><span class="lang-zh">轉接頭 Type C／F</span><span class="lang-en">Adapter Type C/F</span><strong data-i18n="recommend">建議</strong></li>
-        </ul>
+        <p class="muted lang-zh" style="margin:0 0 10px">完整可勾選／可列印清單請到底部「待辦」分頁（與 Excel「出發前待辦」同步）。</p>
+        <p class="muted lang-en" style="margin:0 0 10px">Full printable checklist is under the To-do tab (synced with Excel sheet).</p>
+        <button type="button" class="btn-secondary" data-tab-jump="checklist" data-i18n="go_checklist">開啟完整待辦清單</button>
+      </div>
+    </section>
+
+    <!-- CHECKLIST -->
+    <section class="panel" id="panel-checklist">
+      <div class="checklist-toolbar no-print">
+        <div>
+          <h3 class="section-title" style="margin-top:0" data-i18n="cl_page_title">出發前待辦</h3>
+          <p class="muted" style="margin:0" data-i18n="cl_page_sub">可勾選（存在本機）· 可列印 · 與 Excel「出發前待辦」對齊</p>
+        </div>
+        <div class="checklist-actions">
+          <span class="cl-progress" id="cl-progress">0/0</span>
+          <button type="button" class="btn-secondary" id="cl-reset" data-i18n="cl_reset">清除勾選</button>
+          <button type="button" class="btn-primary" id="cl-print" data-i18n="cl_print">列印／PDF</button>
+        </div>
+      </div>
+
+      <div class="print-only print-header">
+        <h1>2026 Europe Family Trip · Pre-departure Checklist</h1>
+        <p>30 Jul – 14 Aug 2026 · 6 guests · TK PNR TFFSDH · Sun Princess</p>
+        <p class="lang-zh">旅遊：家庭觀光（雅典 → 地中海郵輪 → 巴塞隆納 → 伊斯坦堡 Stopover → 台北）</p>
+        <p class="lang-en">Purpose: family tourism (Athens → cruise → Barcelona → Istanbul stopover → Taipei)</p>
+      </div>
+
+      <div class="cl-legend no-print">
+        <span class="badge badge-danger-soft">P0</span>
+        <span class="muted lang-zh">必須</span><span class="muted lang-en">Must</span>
+        <span class="badge badge-warn">P1</span>
+        <span class="muted lang-zh">強烈建議</span><span class="muted lang-en">Strongly recommended</span>
+        <span class="badge badge-info">P2</span>
+        <span class="muted lang-zh">建議</span><span class="muted lang-en">Nice to have</span>
+        <span class="badge badge-soft">現場</span>
+        <span class="muted lang-zh">到當地</span><span class="muted lang-en">On site</span>
+      </div>
+
+      <div class="cl-filters no-print" id="cl-filters">
+        <button type="button" class="chip active" data-cl-filter="all" data-i18n="phase_all">全部</button>
+        <button type="button" class="chip" data-cl-filter="P0">P0</button>
+        <button type="button" class="chip" data-cl-filter="P1">P1</button>
+        <button type="button" class="chip" data-cl-filter="P2">P2</button>
+        <button type="button" class="chip" data-cl-filter="現場" data-i18n="cl_onsite">現場</button>
+      </div>
+
+      <div id="checklist-root" class="checklist-root"></div>
+
+      <div class="alert alert-info" style="margin-top:14px">
+        <span class="lang-zh">現場必付：雅典飯店尾款 <strong>€60</strong>；巴塞城市稅 <strong>€138.60</strong>。航班以機票 PDF 為準（TPE 09:35）。</span>
+        <span class="lang-en">Pay on site: Athens hotel balance <strong>€60</strong>; Barcelona city tax <strong>€138.60</strong>. Flight times per e-ticket (TPE 09:35).</span>
       </div>
     </section>
   </main>
