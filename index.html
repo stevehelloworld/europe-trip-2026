@@ -60,7 +60,10 @@
           <dt data-i18n="customs_airline">航空／訂位</dt>
           <dd>Turkish Airlines · PNR <button class="copyable" type="button" data-copy="TFFSDH">TFFSDH</button> · TK0125 / TK1845 / TK1854 / TK0124</dd>
           <dt data-i18n="customs_cruise">郵輪</dt>
-          <dd>Princess Cruises · <strong>Sun Princess</strong> · Embark Piraeus 01 Aug · Disembark Barcelona 08 Aug</dd>
+          <dd>Princess Cruises · <strong>Sun Princess</strong> · Voyage <strong>U630</strong> · Embark Piraeus 01 Aug · Disembark Barcelona 08 Aug<br />
+            Bookings: <button class="copyable" type="button" data-copy="DCCX4T">DCCX4T</button> /
+            <button class="copyable" type="button" data-copy="DCCX6Q">DCCX6Q</button> /
+            <button class="copyable" type="button" data-copy="DCCX9M">DCCX9M</button></dd>
           <dt data-i18n="customs_hotels">陸上住宿</dt>
           <dd>
             Athens: ibis Styles Athens Routes (30 Jul–01 Aug)<br />
@@ -77,7 +80,7 @@
             6. MS. LICAI LAN
           </dd>
         </dl>
-        <p class="customs-note" data-i18n="customs_note">全程已訂機票、飯店與部分門票；返台班機 08/13 IST→TPE，08/14 抵台。</p>
+        <p class="customs-note" data-i18n="customs_note">已訂：機票、三地飯店、郵輪 3 艙、衛城／聖家堂／音樂宮、土耳其 e-Visa ×6。返台 08/13 IST→TPE，08/14 抵台。</p>
       </div>
 
       <div class="hero">
@@ -131,7 +134,7 @@
       <div class="alert alert-info" style="margin-top:16px" data-i18n="home_note">
         每日行程以行程表為準；班機時間以機票為準（TPE 起飛 09:35）。本頁可離線開啟。
       </div>
-      <p class="footnote" data-i18n="home_foot">資料同步自家族行程 · 含第一次郵輪指南</p>
+      <p class="footnote" data-i18n="home_foot">資料同步自家族行程與 PDF 憑證 · 含第一次郵輪指南</p>
     </section>
 
     <!-- FLIGHTS -->
@@ -246,16 +249,42 @@
         <div class="hotel-top">
           <div>
             <h3 data-i18n="cruise_name">太陽公主號 Sun Princess</h3>
-            <p class="muted" data-i18n="cruise_sub">08/01 雅典登船 — 08/08 巴塞隆納下船</p>
+            <p class="muted" data-i18n="cruise_sub">08/01 雅典登船 — 08/08 巴塞隆納下船 · Voyage U630 · 7 晚</p>
           </div>
-          <span class="badge badge-warn" data-i18n="hotel_cruise_pending">待補確認檔</span>
+          <span class="badge badge-ok" data-i18n="hotel_cruise_ok">已訂（3 艙）</span>
         </div>
         <div class="hotel-body">
           <dl class="kv">
-            <dt data-i18n="embark">登船</dt><dd data-i18n="embark_v">Piraeus Terminal B · Gate E12 · 15:00 前抵達</dd>
-            <dt data-i18n="disembark">下船</dt><dd data-i18n="disembark_v">Barcelona Palacruceros D／E · 約 09:00</dd>
+            <dt data-i18n="embark">登船</dt><dd data-i18n="embark_v">Piraeus Terminal B · Gate E12 · 15:00 前抵達 · 19:00 啟航</dd>
+            <dt data-i18n="disembark">下船</dt><dd data-i18n="disembark_v">Barcelona Palacruceros D／E · 船約 06:00 抵 · 建議約 09:00 下船</dd>
             <dt data-i18n="ports">靠港</dt><dd data-i18n="ports_v">聖托里尼 · 巴爾 · 科孚 · 西西里（梅西納）</dd>
+            <dt data-i18n="cruise_voyage">航次</dt><dd>U630 · Eastern Mediterranean · Formal nights: 2</dd>
           </dl>
+          <h4 class="cabin-heading lang-zh">三筆訂位（Booking Summary）</h4>
+          <h4 class="cabin-heading lang-en">Three bookings (Booking Summary)</h4>
+          <div class="cabin-grid">
+            <div class="cabin-card">
+              <div class="cabin-code"><button class="copyable" type="button" data-copy="DCCX4T">DCCX4T</button></div>
+              <p class="cabin-room"><strong>11506</strong> · Deck 11 · Cat. DB</p>
+              <p class="muted cabin-pax">HSIA-TING YEH<br />YIJYUN CHEN</p>
+              <p class="muted tiny">Convertible Queen · MedallionNet 1-device ×2</p>
+            </div>
+            <div class="cabin-card">
+              <div class="cabin-code"><button class="copyable" type="button" data-copy="DCCX6Q">DCCX6Q</button></div>
+              <p class="cabin-room"><strong>11310</strong> · Deck 11 · Cat. DA</p>
+              <p class="muted cabin-pax">PEICHIN YEH<br />JUIYUN CHANG</p>
+              <p class="muted tiny">Convertible Twins · Princess Plus · MedallionNet 1-device ×2</p>
+            </div>
+            <div class="cabin-card">
+              <div class="cabin-code"><button class="copyable" type="button" data-copy="DCCX9M">DCCX9M</button></div>
+              <p class="cabin-room"><strong>14257</strong> · Deck 14 · Cat. DB</p>
+              <p class="muted cabin-pax">MINGZHI CHEN<br />LICAI LAN</p>
+              <p class="muted tiny">Convertible Queen · MedallionNet 1-device ×2</p>
+            </div>
+          </div>
+          <div class="alert alert-info" style="margin-top:12px;margin-bottom:0" data-i18n="cruise_file_note">
+            憑證：資料夾 04_郵輪／郵輪訂位_DCCX*.pdf。登船前完成 OceanReady® 並帶護照。
+          </div>
         </div>
       </article>
 
@@ -297,8 +326,11 @@
             <dt data-i18n="room_type">房型</dt><dd data-i18n="room_type_v">3 間 Double · 12 份早餐</dd>
             <dt data-i18n="address">地址</dt><dd>Turgut Özal Millet Caddesi 186, İstanbul 34104</dd>
           </dl>
-          <div class="alert alert-warn" style="margin-top:12px;margin-bottom:0" data-i18n="ist_visa">
-            出發前務必辦妥土耳其 e-Visa × 6。IST 機場建議包車，勿輕信排班計程車。
+          <div class="alert alert-ok" style="margin-top:12px;margin-bottom:8px" data-i18n="ist_visa_done">
+            土耳其 e-Visa ×6 已核准（含旅遊保險）；出發前離線備份 PDF。
+          </div>
+          <div class="alert alert-warn" style="margin:0" data-i18n="ist_visa">
+            IST 機場建議事先包車，勿輕信排班計程車。
           </div>
         </div>
       </article>
@@ -543,8 +575,8 @@
         </button>
         <div class="day-body">
           <div class="slot"><div class="slot-label" data-i18n="morning">早上</div>
-            <p class="lang-zh">約 09:00 下船 → 飯店寄行李。</p>
-            <p class="lang-en">Disembark ~09:00 → hotel luggage drop.</p>
+            <p class="lang-zh">船約 <strong>06:00</strong> 抵巴塞；吃完早餐後約 <strong>09:00</strong> 下船 → 飯店寄行李。</p>
+            <p class="lang-en">Ship arrives ~<strong>06:00</strong>; disembark ~<strong>09:00</strong> after breakfast → hotel luggage drop.</p>
           </div>
           <div class="slot"><div class="slot-label" data-i18n="afternoon">下午</div>
             <p class="lang-zh">巴特略（待購）→ 米拉 → <strong>聖家堂 16:30</strong>。</p>
@@ -715,13 +747,42 @@
 
     <!-- TICKETS -->
     <section class="panel" id="panel-tickets">
+      <h3 class="section-title" data-i18n="docs_title">證件與訂位狀態</h3>
+      <div class="ticket-row">
+        <article class="ticket">
+          <div>
+            <h4 class="lang-zh">✈️ 土航機票 ×6</h4>
+            <h4 class="lang-en">✈️ TK e-tickets ×6</h4>
+            <p>PNR TFFSDH · 02_機票/</p>
+          </div>
+          <span class="badge badge-ok" data-i18n="ticket_ok">已購</span>
+        </article>
+        <article class="ticket">
+          <div>
+            <h4 class="lang-zh">🚢 郵輪訂位 ×3</h4>
+            <h4 class="lang-en">🚢 Cruise bookings ×3</h4>
+            <p>DCCX4T · DCCX6Q · DCCX9M · Voyage U630</p>
+          </div>
+          <span class="badge badge-ok" data-i18n="ticket_ok">已購</span>
+        </article>
+        <article class="ticket">
+          <div>
+            <h4 class="lang-zh">🇹🇷 土耳其 e-Visa ×6</h4>
+            <h4 class="lang-en">🇹🇷 Türkiye e-Visa ×6</h4>
+            <p class="lang-zh">已核准 · 含簽證保險 · 收據 2026/07/18</p>
+            <p class="lang-en">Approved · travel insurance incl. · receipt 18 Jul 2026</p>
+          </div>
+          <span class="badge badge-ok" data-i18n="ticket_ok">已購</span>
+        </article>
+      </div>
+
       <h3 class="section-title" data-i18n="tickets_title">門票狀態</h3>
       <div class="ticket-row">
         <article class="ticket">
           <div>
             <h4 class="lang-zh">🇬🇷 雅典衛城</h4>
             <h4 class="lang-en">🇬🇷 Acropolis of Athens</h4>
-            <p>31 Jul 17:00–18:00 · €30 × 6</p>
+            <p>31 Jul 17:00–18:00 · €30 × 6 · 05_門票/</p>
           </div>
           <span class="badge badge-ok" data-i18n="ticket_ok">已購</span>
         </article>
@@ -790,6 +851,60 @@
         <h2 data-i18n="cruise_hero_h2">第一次坐郵輪 × 太陽公主號</h2>
         <p data-i18n="cruise_hero_p">整理自公主郵輪官方 OceanReady／MedallionClass 與常見新手經驗，供行前與船上參考。</p>
       </div>
+
+      <h3 class="section-title" data-i18n="cruise_book_title">本航次訂位摘要</h3>
+      <div class="card" style="margin-bottom:12px">
+        <ul class="list-clean">
+          <li><span data-i18n="cruise_ship">船名</span><strong>Sun Princess</strong></li>
+          <li><span data-i18n="cruise_voyage">航次</span><strong>U630</strong> · Eastern Mediterranean · 7 nights</li>
+          <li><span data-i18n="cruise_dates">日期</span><strong>01 Aug 2026 – 08 Aug 2026</strong></li>
+          <li><span data-i18n="cruise_route_short">航線</span><strong>Athens (Piraeus) → Barcelona</strong></li>
+          <li><span data-i18n="cruise_formal">正裝夜</span><strong>2 formal nights</strong> · 5 smart casual</li>
+          <li><span>Wi‑Fi</span><strong>MedallionNet 1-device</strong> <span class="muted lang-zh">（各訂位已含）</span><span class="muted lang-en">(included per booking)</span></li>
+        </ul>
+      </div>
+      <div class="cabin-grid" style="margin-bottom:14px">
+        <div class="cabin-card">
+          <div class="cabin-code"><button class="copyable" type="button" data-copy="DCCX4T">DCCX4T</button></div>
+          <p class="cabin-room"><strong>11506</strong> · Deck 11 · DB</p>
+          <p class="muted cabin-pax">HSIA-TING YEH · YIJYUN CHEN</p>
+        </div>
+        <div class="cabin-card">
+          <div class="cabin-code"><button class="copyable" type="button" data-copy="DCCX6Q">DCCX6Q</button></div>
+          <p class="cabin-room"><strong>11310</strong> · Deck 11 · DA</p>
+          <p class="muted cabin-pax">PEICHIN YEH · JUIYUN CHANG</p>
+        </div>
+        <div class="cabin-card">
+          <div class="cabin-code"><button class="copyable" type="button" data-copy="DCCX9M">DCCX9M</button></div>
+          <p class="cabin-room"><strong>14257</strong> · Deck 14 · DB</p>
+          <p class="muted cabin-pax">MINGZHI CHEN · LICAI LAN</p>
+        </div>
+      </div>
+      <div class="card tip-card" style="margin-bottom:14px">
+        <h4 class="lang-zh" style="margin-top:0">官方靠港時間（Booking Summary）</h4>
+        <h4 class="lang-en" style="margin-top:0">Port times (Booking Summary)</h4>
+        <ul class="lang-zh" style="margin-bottom:0">
+          <li>08/01 雅典（Piraeus）登船 · <strong>19:00 啟航</strong>（未含公主接送）</li>
+          <li>08/02 聖托里尼 07:00–19:00</li>
+          <li>08/03 海上日</li>
+          <li>08/04 巴爾 07:30–18:00</li>
+          <li>08/05 科孚 07:00–（見 App／Excel 16:00 啟航）</li>
+          <li>08/06 西西里／梅西納（見 App／Excel）</li>
+          <li>08/07 海上日</li>
+          <li>08/08 巴塞隆納 <strong>06:00 抵港</strong> · 下船</li>
+        </ul>
+        <ul class="lang-en" style="margin-bottom:0">
+          <li>01 Aug Athens (Piraeus) embark · <strong>sail 19:00</strong> (no Princess transfer purchased)</li>
+          <li>02 Aug Santorini 07:00–19:00</li>
+          <li>03 Aug At sea</li>
+          <li>04 Aug Bar 07:30–18:00</li>
+          <li>05 Aug Corfu 07:00– (App/Excel: sail ~16:00)</li>
+          <li>06 Aug Sicily/Messina (see App/Excel)</li>
+          <li>07 Aug At sea</li>
+          <li>08 Aug Barcelona <strong>arrive 06:00</strong> · disembark</li>
+        </ul>
+      </div>
+
       <div class="alert alert-warn" style="margin-top:12px" data-i18n="cruise_disclaimer">
         實際規定以公主郵輪 App、航海日誌與船上公告為準；以下為一般建議。
       </div>
@@ -803,7 +918,8 @@
           <li>列印或手機存好 <strong>行李吊牌 Luggage Tags</strong>；大件行李貼吊牌後才交給碼頭搬運。</li>
           <li>若可事先取得 <strong>Medallion®</strong>（智慧圓片）：當日佩戴登船；勿放託運箱。</li>
           <li>藥品、護照、貴重物、換洗衣物、充電器放<strong>隨身行李</strong>（大件可能傍晚才送進艙房）。</li>
-          <li>確認簽證／入境：希臘申根、郵輪靠港、西班牙、土耳其 e-Visa 皆需齊全。</li>
+          <li>簽證／入境：希臘申根、郵輪靠港、西班牙；<strong>土耳其 e-Visa ×6 已核准</strong>（離線備份核准頁＋保險）。</li>
+          <li>三筆訂位號：<strong>DCCX4T / DCCX6Q / DCCX9M</strong>；艙房 <strong>11506 / 11310 / 14257</strong>。</li>
         </ul>
         <ul class="lang-en">
           <li>Complete <strong>OceanReady®</strong> online check-in (passport, emergency contacts, etc.).</li>
@@ -811,7 +927,8 @@
           <li>Print / save <strong>luggage tags</strong>; attach before porters take large bags.</li>
           <li>If you receive a <strong>Medallion®</strong> in advance, wear it to the terminal — never check it in luggage.</li>
           <li>Keep meds, passports, valuables, a change of clothes and chargers in <strong>carry-on</strong> (checked bags may arrive late afternoon).</li>
-          <li>Visas: Schengen (Greece/Spain route) + Türkiye e-Visa for stopover.</li>
+          <li>Visas: Schengen (Greece/Spain) · <strong>Türkiye e-Visa ×6 approved</strong> (offline PDF + insurance).</li>
+          <li>Bookings <strong>DCCX4T / DCCX6Q / DCCX9M</strong> · cabins <strong>11506 / 11310 / 14257</strong>.</li>
         </ul>
       </div>
 
@@ -984,13 +1101,15 @@
           <li><strong>08/02 聖托里尼：</strong>Tender + 纜車瓶頸；評估 Water Taxi；16:30 前開始回程排隊。</li>
           <li><strong>08/05 科孚：</strong>16:00 啟航較早 → 15:00 廣場會合。</li>
           <li><strong>08/06 西西里：</strong>火車／包車都要預留回港緩衝。</li>
-          <li>Excel 有「郵輪活動 0801–0805」明細，可與當日 App 行程交叉比對（表演可能微調）。</li>
+          <li>Excel 有「郵輪活動 0801–0807」明細，可與當日 App 行程交叉比對（表演可能微調）。</li>
+          <li>Booking Summary 顯示<strong>未購買</strong>公主接送（登船／下船皆需自理包車）。</li>
         </ul>
         <ul class="lang-en">
           <li><strong>02 Aug Santorini:</strong> tender + cable-car queues; consider water taxi; start return by 16:30.</li>
           <li><strong>05 Aug Corfu:</strong> early 16:00 sail-out → meetup 15:00.</li>
           <li><strong>06 Aug Sicily:</strong> build buffer for train/private car return.</li>
-          <li>Ship show schedules can change — confirm on the Princess app daily.</li>
+          <li>Excel has daily onboard activity sheets 0801–0807 — cross-check with the app.</li>
+          <li>Booking Summary: <strong>no Princess transfer</strong> purchased (self-arrange embark/disembark cars).</li>
         </ul>
       </div>
 

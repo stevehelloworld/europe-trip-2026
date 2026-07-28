@@ -538,6 +538,59 @@ body[data-lang="en"] .lang-zh { display: none !important; }
   border: 1px solid #c5e1e8;
 }
 
+.alert-ok {
+  background: var(--ok-bg);
+  color: var(--ok);
+  border: 1px solid #b7e0c4;
+}
+
+/* Cruise cabin booking cards */
+.cabin-heading {
+  margin: 14px 0 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.cabin-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 640px) {
+  .cabin-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.cabin-card {
+  background: #f7fbfc;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+}
+
+.cabin-code {
+  margin-bottom: 6px;
+}
+
+.cabin-room {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+}
+
+.cabin-pax {
+  margin: 0 0 4px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.tiny {
+  font-size: 0.78rem;
+  margin: 0;
+}
+
 /* Flights */
 .flight-stack {
   display: grid;
