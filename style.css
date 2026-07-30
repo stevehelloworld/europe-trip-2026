@@ -930,6 +930,324 @@ body[data-lang="en"] .lang-zh { display: none !important; }
   display: block;
 }
 
+/* Pink-highlighted cruise shows */
+.evening-shows {
+  margin: 18px 0 20px;
+  scroll-margin-top: 120px;
+}
+
+.show-section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.show-section-head .section-title {
+  margin-bottom: 0;
+}
+
+.section-kicker {
+  margin: 0 0 4px;
+  color: #9c1c6b;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.show-count {
+  flex: 0 0 auto;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #ffe6f5;
+  color: #9c1c6b;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.show-note {
+  margin: 12px 0;
+}
+
+.show-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.show-card {
+  padding: 14px;
+  background: #fffafd;
+  border: 1px solid #efc9df;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.show-card-activity {
+  background: #fffdf8;
+  border-color: #eadcc0;
+}
+
+.show-topline,
+.show-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.show-date {
+  color: var(--aegean-deep);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.show-tag,
+.show-type {
+  color: #9c1c6b;
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.show-card h4 {
+  margin: 10px 0 3px;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.show-cn-title {
+  margin: 0 0 8px;
+  color: #9c1c6b;
+  font-size: 0.9rem;
+  font-weight: 750;
+}
+
+.show-card > p:not(.show-cn-title):not(.show-tip) {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.show-footer {
+  padding-top: 9px;
+  border-top: 1px solid #f1dce8;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.show-tip {
+  margin: 8px 0 0;
+  padding: 8px 10px;
+  border-radius: 9px;
+  background: #fff0f8;
+  color: #7b315e;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.show-schedule-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 22px 0 10px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.show-schedule-head h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.show-count-neutral {
+  background: #edf1f2;
+  color: var(--aegean-deep);
+}
+
+.show-schedule {
+  display: grid;
+  gap: 7px;
+}
+
+.show-day-group {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 10px;
+}
+
+.show-day-group h5 {
+  margin: 7px 0 0;
+  color: var(--aegean-deep);
+  font-size: 0.84rem;
+}
+
+.show-row {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 8px 12px;
+  padding: 10px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 11px;
+}
+
+.show-row.cancelled {
+  background: #f5f2ef;
+  opacity: 0.72;
+}
+
+.show-row.cancelled .show-row-title {
+  text-decoration: line-through;
+}
+
+.show-row-date {
+  color: var(--aegean-deep);
+  font-size: 0.78rem;
+  font-weight: 850;
+  line-height: 1.35;
+}
+
+.show-row-main {
+  min-width: 0;
+}
+
+.show-row-title {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 780;
+  line-height: 1.4;
+}
+
+.show-row-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 10px;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+
+.show-row-note {
+  grid-column: 2;
+  margin: 0;
+  padding-top: 5px;
+  border-top: 1px dashed var(--line);
+  color: #7b315e;
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+
+.show-pick-btn,
+.day-show-pick {
+  border: 1px solid #d6b2c8;
+  border-radius: 999px;
+  background: #fff;
+  color: #8c255f;
+  padding: 6px 9px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.show-pick-btn {
+  grid-column: 2;
+  justify-self: start;
+}
+
+.show-pick-btn.active,
+.day-show-pick.active {
+  background: #ffe6f5;
+  border-color: #c85b99;
+}
+
+.day-show-agenda {
+  margin: 12px 0 0;
+  padding: 12px;
+  background: #fffafd;
+  border: 1px solid #efc9df;
+  border-radius: 12px;
+}
+
+.day-show-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+  color: #9c1c6b;
+  font-size: 0.82rem;
+}
+
+.day-show-heading span {
+  color: var(--muted);
+  font-weight: 650;
+}
+
+.day-show-line {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  gap: 5px 8px;
+  align-items: center;
+  padding: 8px 0;
+  border-top: 1px solid #f1dce8;
+}
+
+.day-show-time {
+  color: #9c1c6b;
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.day-show-title {
+  min-width: 0;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.day-show-venue {
+  grid-column: 2;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.day-show-pick {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+
+.day-show-line.cancelled {
+  opacity: 0.55;
+}
+
+.day-show-line.cancelled .day-show-title {
+  text-decoration: line-through;
+}
+
+.day-show-status {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  color: #a43b2e;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.show-row-status {
+  color: #a43b2e;
+  font-weight: 800;
+}
+
+@media (min-width: 720px) {
+  .show-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .show-pick-btn {
+    grid-column: 2;
+  }
+}
+
 /* Tickets */
 .ticket-row {
   display: grid;

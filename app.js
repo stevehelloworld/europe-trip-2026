@@ -11,6 +11,52 @@
   if (lang !== "zh" && lang !== "en") lang = "zh";
   let clFilter = "all";
 
+  /* Complete performance/show rows from 郵輪活動0801–0807.
+     Pink-highlighted rows are detailed above; cancelled rows are retained in source data
+     for auditability but are never rendered to the group-facing page. */
+  const SHOW_SCHEDULE = [
+    ["08/03", "11:30", "Princess Insider: Port & Shopping｜公主內線情報：港口指南與海上購物攻略", "Deck 8 · Princess Arena", "白天活動；可獲串珠手鍊兌換券、港口官方導覽地圖與 VIP 特惠卡"],
+    ["08/01", "19:30", "Showtime: Hypnotist David Knight｜劇場大秀：David Knight 現場催眠奇幻秀", "Deck 8 · Princess Arena", "已取消"],
+    ["08/01", "19:30", "Showtime: Comedy Juggler Niels Duinker｜幽默雜耍大師 Niels Duinker 全新特技秀", "Deck 7 · The Piazza", "可以繞去 8 樓或 9 樓中庭圍欄邊俯瞰"],
+    ["08/01", "20:00", "Showtime: Vocalist Willis White｜實力派歌手 Willis White 演唱會", "Deck 8 · Princess Arena", "建議 19:30–19:40 進劇場占位"],
+    ["08/01", "21:30", "Showtime: Hypnotist David Knight｜劇場大秀：David Knight 現場催眠奇幻秀", "Deck 8 · Princess Arena", "已取消"],
+    ["08/01", "21:30", "Showtime: Comedy Juggler Niels Duinker｜幽默雜耍大師 Niels Duinker 全新特技秀", "Deck 7 · The Piazza", "可以繞去 8 樓或 9 樓中庭圍欄邊俯瞰"],
+    ["08/01", "21:30", "Showtime: Acrobatic Duo Chris & Iona｜穹頂大秀：雙人特技組合", "Deck 17 · The Dome", "建議 21:00–21:10 進場占位"],
+    ["08/01", "22:00", "Showtime: Vocalist Willis White｜實力派歌手 Willis White 演唱會", "Deck 8 · Princess Arena", "建議 21:30–21:40 進劇場占位"],
+    ["08/02", "19:30", "Theatrical Show: Viva La Música｜劇院大秀：音樂萬歲！拉丁現場盛夏音樂會", "Deck 8 · Princess Arena", "已取消"],
+    ["08/02", "20:00", "Showtime: Hypnotist David Knight｜劇場大秀：David Knight 現場催眠奇幻秀", "Deck 8 · Princess Arena", "建議 19:30–19:40 進劇場占位"],
+    ["08/02", "21:45", "Candlelight Concert: The Tone Shifters｜燭光音樂會", "Deck 17 · The Dome", "建議 21:20–21:30 進劇場占位"],
+    ["08/02", "22:00", "Showtime: Hypnotist David Knight｜劇場大秀：David Knight 現場催眠奇幻秀", "Deck 8 · Princess Arena", "建議 21:30–21:40 進劇場占位"],
+    ["08/03", "19:30", "Showtime: Vocalist Willis White｜國際知名男高音 Willis White 演唱會", "Deck 8 · Princess Arena", "已取消"],
+    ["08/03", "19:30", "Showtime: Hypnotist David Knight｜精彩主打秀：催眠大師驚奇催眠秀", "Deck 7 · Princess Live!", "建議 19:00–19:10 進劇場占位"],
+    ["08/03", "20:00", "Theatrical Show: Fiera｜劇院大秀：原創歌舞劇《菲埃拉！奇幻嘉年華》", "Deck 8 · Princess Arena", "建議 19:20–19:30 進劇場占位"],
+    ["08/03", "21:30", "Showtime: Hypnotist David Knight｜精彩主打秀：催眠大師驚奇催眠秀", "Deck 7 · Princess Live!", "建議 21:00–21:10 進劇場占位"],
+    ["08/03", "21:30", "Showtime: Comedy Juggler Niels Duinker｜幽默雜耍大師全新特技秀", "Deck 17 · The Dome", "建議 21:00–21:10 進場占位"],
+    ["08/03", "21:30", "Showtime: Vocalist Willis White｜國際知名男高音演唱會", "Deck 8 · Princess Arena", "已取消"],
+    ["08/03", "22:00", "Theatrical Show: Fiera｜劇院大秀：原創歌舞劇《菲埃拉！奇幻嘉年華》", "Deck 8 · Princess Arena", "建議 21:20–21:30 進劇場占位"],
+    ["08/03", "22:30", "Showtime: City Limits — Lionel & Tina with Xcite｜精彩演出", "Deck 7 · The Piazza", "可在 8 樓或 9 樓俯瞰"],
+    ["08/04", "19:30", "Showtime: Acrobatic Duo Chris & Iona｜精彩大秀：雙人特技組合", "Deck 7 · The Piazza", "可繞去 8 樓或 9 樓中庭圍欄邊俯瞰"],
+    ["08/04", "19:30", "Theatrical Show: Stage Struck｜劇院大秀：百老匯歌舞風華", "Deck 8 · Princess Arena", "已取消"],
+    ["08/04", "21:00", "Theatrical Show: Stage Struck｜劇院大秀：百老匯歌舞風華", "Deck 8 · Princess Arena", "已取消"],
+    ["08/05", "19:30", "Showtime: Aerial Instrumentalist Janice Martin｜空中器樂演奏家驚奇秀", "Deck 8 · Princess Arena", "已取消"],
+    ["08/05", "21:00", "Showtime: Aerial Instrumentalist Janice Martin｜空中器樂演奏家驚奇秀", "Deck 8 · Princess Arena", "已取消"],
+    ["08/07", "14:30", "Showtime: Vocalist Aaron Jacobs｜精彩演出：百老匯搖滾傳奇", "Deck 8 · Princess Arena", "下午場；建議 14:00–14:10 進劇場占位"],
+    ["08/07", "14:30", "Princess World Orchestra — Rock Edition｜公主世界管弦樂團搖滾特輯", "Deck 8 · Princess Arena", "已取消"],
+    ["08/07", "19:30", "Showtime: Aerial Act Duo Fusion｜雙人高空特技《玻璃鞋傳奇》", "Deck 8 · Princess Arena", "已取消；原建議 18:50–19:00 進場"],
+    ["08/07", "19:30", "Showtime: Aerial Instrumentalist Janice Martin｜空中器樂演奏家驚奇秀", "Deck 7 · The Piazza", "可繞去 8 樓或 9 樓中庭圍欄邊俯瞰"],
+    ["08/07", "20:00", "Theatrical Show: Stage Struck｜歌舞大秀《迷戀舞台》", "Deck 8 · Princess Arena", "建議 19:20–19:30 進劇場占位"],
+    ["08/07", "20:50", "Showtime: Aerial Act Duo Fusion｜雙人高空特技《玻璃鞋傳奇》", "Deck 8 · Princess Arena", "已取消；原建議 20:50–21:00 進場"],
+    ["08/07", "20:50", "Showtime: Aerial Instrumentalist Janice Martin｜空中器樂演奏家驚奇秀", "Deck 7 · The Piazza", "可繞去 8 樓或 9 樓中庭圍欄邊俯瞰"],
+    ["08/07", "21:15", "Candlelight Concert: Cristhian Cardenas｜燭光音樂會", "Deck 17 · The Dome", "建議 21:20–21:30 進劇場占位"],
+    ["08/07", "21:30", "Theatrical Show: Stage Struck｜歌舞大秀《迷戀舞台》", "Deck 8 · Princess Arena", "建議 21:20–21:30 進劇場占位"],
+    ["08/04", "20:00", "Showtime: Aerial Instrumentalist Janice Martin｜空中器樂演奏家驚奇秀", "Deck 8 · Princess Arena", "建議 19:20–19:30 進劇場占位"],
+    ["08/05", "19:30", "Theatrical Show: Viva La Música｜劇院大秀：音樂萬歲！拉丁現場盛夏音樂會", "Deck 8 · Princess Arena", "建議 19:00–19:10 進劇場占位"],
+    ["08/05", "22:00", "Theatrical Show: Viva La Música｜劇院大秀：音樂萬歲！拉丁現場盛夏音樂會", "Deck 8 · Princess Arena", "建議 21:00–21:10 進劇場占位"],
+    ["08/06", "20:00", "Showtime: Aerial Act Duo Fusion｜雙人高空特技《玻璃鞋傳奇》", "Deck 8 · Princess Arena", "建議 19:20–19:30 進場；一樓中後排或二樓前排正中央較佳"],
+    ["08/06", "22:00", "Showtime: Aerial Act Duo Fusion｜雙人高空特技《玻璃鞋傳奇》", "Deck 8 · Princess Arena", "建議 21:20–21:30 進場；一樓中後排或二樓前排正中央較佳"],
+  ];
+  const SHOW_PICK_KEY = "trip_show_picks_v1";
+
   const dict = () => (window.TRIP_I18N && window.TRIP_I18N[lang]) || {};
 
   /* Checklist items (aligned with Excel「出發前待辦」) */
@@ -436,6 +482,82 @@
     });
   }
 
+  function loadShowPicks() {
+    try { return JSON.parse(localStorage.getItem(SHOW_PICK_KEY) || "{}"); } catch { return {}; }
+  }
+
+  function saveShowPicks(map) {
+    localStorage.setItem(SHOW_PICK_KEY, JSON.stringify(map));
+  }
+
+  function showRowId(item) {
+    return `${item[0]}-${item[1]}-${item[2]}`.replace(/[^\w\u4e00-\u9fff]+/g, "_");
+  }
+
+  function renderShowSchedule() {
+    const scheduleRoot = $("#show-schedule");
+    const picks = loadShowPicks();
+    const byDate = {};
+    SHOW_SCHEDULE.filter((item) => item[4] !== "已取消").forEach((item, index) => {
+      const day = item[0];
+      if (!byDate[day]) byDate[day] = [];
+      byDate[day].push({ item, index, id: showRowId(item) + "_" + index });
+    });
+
+    if (scheduleRoot) {
+      scheduleRoot.innerHTML = "";
+      Object.keys(byDate).forEach((day) => {
+        const group = document.createElement("div");
+        group.className = "show-day-group";
+        group.innerHTML = `<h5>${day} · 船上演出</h5>`;
+        byDate[day].forEach(({ item, index, id }) => {
+          const cancelled = false;
+          const row = document.createElement("article");
+          row.className = "show-row" + (cancelled ? " cancelled" : "");
+          row.innerHTML = `
+            <div class="show-row-date">${item[1]}<br><span>45 min</span></div>
+            <div class="show-row-main">
+              <p class="show-row-title">${item[2]}</p>
+              <div class="show-row-meta"><span>${item[3]}</span>${cancelled ? '<span class="show-row-status">已取消</span>' : '<span>可安排</span>'}</div>
+            </div>
+            <p class="show-row-note">${item[4]}</p>
+            ${cancelled ? "" : `<button type="button" class="show-pick-btn ${picks[id] ? "active" : ""}" data-show-pick="${id}">${picks[id] ? "✓ 已加入當日計畫" : "＋ 加入當日計畫"}</button>`}`;
+          group.appendChild(row);
+        });
+        scheduleRoot.appendChild(group);
+      });
+    }
+
+    dayCards.forEach((card) => {
+      const day = (card.dataset.date || "").slice(5).replace("-", "/");
+      const items = byDate[day] || [];
+      const existing = $(".day-show-agenda", card);
+      if (existing) existing.remove();
+      if (!items.length) return;
+      const block = document.createElement("div");
+      block.className = "day-show-agenda";
+      block.innerHTML = `<div class="day-show-heading"><strong>🎭 當日演出安排</strong><span>${items.filter((x) => x.item[4] !== "已取消").length} 場可安排</span></div>`;
+      items.forEach(({ item, index, id }) => {
+        const cancelled = false;
+        const row = document.createElement("div");
+        row.className = "day-show-line" + (cancelled ? " cancelled" : "");
+        row.innerHTML = `<span class="day-show-time">${item[1]}</span><span class="day-show-title">${item[2]}</span><span class="day-show-venue">${item[3]}</span>${cancelled ? '<span class="day-show-status">已取消</span>' : `<button type="button" class="day-show-pick ${picks[id] ? "active" : ""}" data-show-pick="${id}">${picks[id] ? "已選" : "加入"}</button>`}`;
+        block.appendChild(row);
+      });
+      $(".day-body", card)?.appendChild(block);
+    });
+  }
+
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-show-pick]");
+    if (!btn) return;
+    const id = btn.getAttribute("data-show-pick");
+    const picks = loadShowPicks();
+    picks[id] = !picks[id];
+    saveShowPicks(picks);
+    renderShowSchedule();
+  });
+
   document.addEventListener("change", (e) => {
     const box = e.target.closest("[data-cl-check]");
     if (!box) return;
@@ -487,6 +609,7 @@
 
   /* ---------- Init ---------- */
   applyLang(lang);
+  renderShowSchedule();
   highlightToday();
   applyHash();
 })();
