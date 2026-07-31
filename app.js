@@ -14,7 +14,7 @@
   const SHOW_PICK_KEY = "trip_show_picks_v1";
 
   /* Group-facing pink selections.
-     Counts: 08/01 ×1, 08/02 ×1, 08/03 ×4, 08/04 ×1, 08/05 ×2, 08/06 ×2, 08/07 ×2. */
+     Counts: 08/01 ×1, 08/02 ×1, 08/03 ×4, 08/04 ×1, 08/05 ×2, 08/06 ×2, 08/07 ×4. */
   const PINK_SHOW_SCHEDULE = [
     ["08/01", "21:30", "Showtime: Acrobatic Duo Chris & Iona｜穹頂大秀：雙人特技組合", "Deck 17 · The Dome", "建議 21:00–21:10 進場占位", "劇目《Chalk Cake》以幽默、自嘲方式呈現這對雙人組合充滿娛樂性的生活，包含特技、舞蹈、現場互動與觀眾參與橋段。", "45 min"],
     ["08/02", "22:00", "Showtime: Hypnotist David Knight｜劇場大秀：現場催眠奇幻秀", "Deck 8 · Princess Arena", "建議 21:30–21:40 進劇場占位", "David Knight 是具有超過 40 年演出經驗的英國喜劇催眠大師；演出兼具高雅、魔幻與現場觀眾互動。", "45 min"],
@@ -27,8 +27,10 @@
     ["08/05", "22:00", "Theatrical Show: Viva La Música｜音樂萬歲！拉丁現場盛夏音樂會", "Deck 8 · Princess Arena", "建議 21:00–21:10 進劇場占位", "同一場拉丁現場音樂會的第二場次。", "45 min"],
     ["08/06", "20:00", "Showtime: Aerial Act Duo Fusion｜雙人高空特技《玻璃鞋傳奇》", "Deck 8 · Princess Arena", "建議 19:20–19:30 進場；一樓中後排或二樓前排正中央較佳", "以現代翻轉元素演繹經典愛情故事，利用絲帶、吊環與鋼絲呈現高難度空中特技。", "45 min"],
     ["08/06", "22:00", "Showtime: Aerial Act Duo Fusion｜雙人高空特技《玻璃鞋傳奇》", "Deck 8 · Princess Arena", "建議 21:20–21:30 進場；一樓中後排或二樓前排正中央較佳", "《玻璃鞋傳奇》第二場次；絲帶、吊環與鋼絲高空特技。", "45 min"],
-    ["08/07", "12:15", "Pastry Extravaganza｜甜點糕點狂歡盛宴", "Deck 9 · Americana Diner", "熱門限量甜點很快取完，建議提早抵達", "烘焙團隊準備種類豐富、造型精緻且數量有限的甜點、蛋糕與派塔。", "30 min"],
-    ["08/07", "12:15", "Behind The Seas: Life Below Decks｜海洋幕後秘辛：甲板底下的船員生活", "Deck 8 · Princess Arena", "與甜點盛宴同時段，請先選擇較想參加的一項", "由郵輪總監與船上團隊帶領，深入了解「船員專用」區域背後的郵輪生活與運作。", "45 min"],
+    ["08/07", "19:30", "Showtime: Aerial Instrumentalist Janice Martin｜劇院大秀：空中器樂演奏家驚奇秀", "Deck 7 · The Piazza", "可到 8F／9F 中庭圍欄邊俯瞰", "精通多種樂器的演奏家兼歌手 Janice Martin 帶來大師級的音樂與視覺盛宴。", "45 min"],
+    ["08/07", "20:00", "Theatrical Show: Stage Struck｜歌舞大秀《迷戀舞台》", "Deck 8 · Princess Arena", "建議 19:20–19:30 進劇場占位", "跟隨優秀演員陣容一窺專業表演者背後的付出，以現代手法重新詮釋傳統音樂劇體驗。", "45 min"],
+    ["08/07", "21:30", "Showtime: Aerial Instrumentalist Janice Martin｜劇院大秀：空中器樂演奏家驚奇秀", "Deck 7 · The Piazza", "可到 8F／9F 中庭圍欄邊俯瞰", "Janice Martin 音樂與視覺盛宴的第二場次。", "45 min"],
+    ["08/07", "22:00", "Theatrical Show: Stage Struck｜歌舞大秀《迷戀舞台》", "Deck 8 · Princess Arena", "建議 21:20–21:30 進劇場占位", "《迷戀舞台》第二場次，以圓形劇場形式呈現現代音樂劇演出。", "45 min"],
   ];
 
   const dict = () => (window.TRIP_I18N && window.TRIP_I18N[lang]) || {};
