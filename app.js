@@ -13,20 +13,22 @@
 
   const SHOW_PICK_KEY = "trip_show_picks_v1";
 
-  /* Group-facing list: pink-highlighted evening selections only.
-     Counts: 08/01 ×1, 08/02 ×1, 08/03 ×4, 08/04 ×1, 08/05 ×2, 08/06 ×2. */
+  /* Group-facing pink selections.
+     Counts: 08/01 ×1, 08/02 ×1, 08/03 ×4, 08/04 ×1, 08/05 ×2, 08/06 ×2, 08/07 ×2. */
   const PINK_SHOW_SCHEDULE = [
-    ["08/01", "21:30", "Showtime: Acrobatic Duo Chris & Iona｜穹頂大秀：雙人特技組合", "Deck 17 · The Dome", "建議 21:00–21:10 進場占位", "劇目《Chalk Cake》以幽默、自嘲方式呈現這對雙人組合充滿娛樂性的生活，包含特技、舞蹈、現場互動與觀眾參與橋段。"],
-    ["08/02", "22:00", "Showtime: Hypnotist David Knight｜劇場大秀：現場催眠奇幻秀", "Deck 8 · Princess Arena", "建議 21:30–21:40 進劇場占位", "David Knight 是具有超過 40 年演出經驗的英國喜劇催眠大師；演出兼具高雅、魔幻與現場觀眾互動。"],
-    ["08/03", "19:30", "Princess 60th Anniversary Party｜公主郵輪 60 週年傳奇派對", "Deck 7 · Princess Live!", "建議 19:00–19:10 先占沙發位；可領香檳後到 8F／9F 站著觀賞", "中庭 60 週年盛大慶典，回顧公主郵輪六個年代的經典音樂與難忘回憶。"],
-    ["08/03", "20:00", "Theatrical Show: Fiera｜原創歌舞劇《菲埃拉！奇幻嘉年華》", "Deck 8 · Princess Arena", "建議 19:20–19:30 進劇場占位", "以世紀交替的歐洲嘉年華為背景，透過流行金曲串燒、華麗服飾與舞蹈呈現奇幻愛情故事。"],
-    ["08/03", "21:30", "Showtime: Comedy Juggler Niels Duinker｜幽默雜耍大師全新特技秀", "Deck 17 · The Dome", "建議 21:00–21:10 進場占位", "三度金氏世界紀錄雜耍大師帶來高難度拋接特技與喜劇演出。"],
-    ["08/03", "22:00", "Theatrical Show: Fiera｜原創歌舞劇《菲埃拉！奇幻嘉年華》", "Deck 8 · Princess Arena", "建議 21:20–21:30 進劇場占位", "《菲埃拉！奇幻嘉年華》第二場次；流行金曲串燒、華麗服飾與充滿活力的舞台演出。"],
-    ["08/04", "20:00", "Showtime: Aerial Instrumentalist Janice Martin｜空中器樂演奏家驚奇秀", "Deck 8 · Princess Arena", "建議 19:20–19:30 進劇場占位", "空中懸吊特技結合現場器樂與歌唱，曲目從拉斯維加斯經典到 Vivaldi 古典樂。"],
-    ["08/05", "19:30", "Theatrical Show: Viva La Música｜音樂萬歲！拉丁現場盛夏音樂會", "Deck 8 · Princess Arena", "建議 19:00–19:10 進劇場占位", "樂手與劇院演員帶來高能量、熱情洋溢的拉丁音樂現場演出。"],
-    ["08/05", "22:00", "Theatrical Show: Viva La Música｜音樂萬歲！拉丁現場盛夏音樂會", "Deck 8 · Princess Arena", "建議 21:00–21:10 進劇場占位", "同一場拉丁現場音樂會的第二場次。"],
-    ["08/06", "20:00", "Showtime: Aerial Act Duo Fusion｜雙人高空特技《玻璃鞋傳奇》", "Deck 8 · Princess Arena", "建議 19:20–19:30 進場；一樓中後排或二樓前排正中央較佳", "以現代翻轉元素演繹經典愛情故事，利用絲帶、吊環與鋼絲呈現高難度空中特技。"],
-    ["08/06", "22:00", "Showtime: Aerial Act Duo Fusion｜雙人高空特技《玻璃鞋傳奇》", "Deck 8 · Princess Arena", "建議 21:20–21:30 進場；一樓中後排或二樓前排正中央較佳", "《玻璃鞋傳奇》第二場次；絲帶、吊環與鋼絲高空特技。"],
+    ["08/01", "21:30", "Showtime: Acrobatic Duo Chris & Iona｜穹頂大秀：雙人特技組合", "Deck 17 · The Dome", "建議 21:00–21:10 進場占位", "劇目《Chalk Cake》以幽默、自嘲方式呈現這對雙人組合充滿娛樂性的生活，包含特技、舞蹈、現場互動與觀眾參與橋段。", "45 min"],
+    ["08/02", "22:00", "Showtime: Hypnotist David Knight｜劇場大秀：現場催眠奇幻秀", "Deck 8 · Princess Arena", "建議 21:30–21:40 進劇場占位", "David Knight 是具有超過 40 年演出經驗的英國喜劇催眠大師；演出兼具高雅、魔幻與現場觀眾互動。", "45 min"],
+    ["08/03", "19:30", "Princess 60th Anniversary Party｜公主郵輪 60 週年傳奇派對", "Deck 7 · Princess Live!", "建議 19:00–19:10 先占沙發位；可領香檳後到 8F／9F 站著觀賞", "中庭 60 週年盛大慶典，回顧公主郵輪六個年代的經典音樂與難忘回憶。", "60 min"],
+    ["08/03", "20:00", "Theatrical Show: Fiera｜原創歌舞劇《菲埃拉！奇幻嘉年華》", "Deck 8 · Princess Arena", "建議 19:20–19:30 進劇場占位", "以世紀交替的歐洲嘉年華為背景，透過流行金曲串燒、華麗服飾與舞蹈呈現奇幻愛情故事。", "45 min"],
+    ["08/03", "21:30", "Showtime: Comedy Juggler Niels Duinker｜幽默雜耍大師全新特技秀", "Deck 17 · The Dome", "建議 21:00–21:10 進場占位", "三度金氏世界紀錄雜耍大師帶來高難度拋接特技與喜劇演出。", "45 min"],
+    ["08/03", "22:00", "Theatrical Show: Fiera｜原創歌舞劇《菲埃拉！奇幻嘉年華》", "Deck 8 · Princess Arena", "建議 21:20–21:30 進劇場占位", "《菲埃拉！奇幻嘉年華》第二場次；流行金曲串燒、華麗服飾與充滿活力的舞台演出。", "45 min"],
+    ["08/04", "20:00", "Showtime: Aerial Instrumentalist Janice Martin｜空中器樂演奏家驚奇秀", "Deck 8 · Princess Arena", "建議 19:20–19:30 進劇場占位", "空中懸吊特技結合現場器樂與歌唱，曲目從拉斯維加斯經典到 Vivaldi 古典樂。", "45 min"],
+    ["08/05", "19:30", "Theatrical Show: Viva La Música｜音樂萬歲！拉丁現場盛夏音樂會", "Deck 8 · Princess Arena", "建議 19:00–19:10 進劇場占位", "樂手與劇院演員帶來高能量、熱情洋溢的拉丁音樂現場演出。", "45 min"],
+    ["08/05", "22:00", "Theatrical Show: Viva La Música｜音樂萬歲！拉丁現場盛夏音樂會", "Deck 8 · Princess Arena", "建議 21:00–21:10 進劇場占位", "同一場拉丁現場音樂會的第二場次。", "45 min"],
+    ["08/06", "20:00", "Showtime: Aerial Act Duo Fusion｜雙人高空特技《玻璃鞋傳奇》", "Deck 8 · Princess Arena", "建議 19:20–19:30 進場；一樓中後排或二樓前排正中央較佳", "以現代翻轉元素演繹經典愛情故事，利用絲帶、吊環與鋼絲呈現高難度空中特技。", "45 min"],
+    ["08/06", "22:00", "Showtime: Aerial Act Duo Fusion｜雙人高空特技《玻璃鞋傳奇》", "Deck 8 · Princess Arena", "建議 21:20–21:30 進場；一樓中後排或二樓前排正中央較佳", "《玻璃鞋傳奇》第二場次；絲帶、吊環與鋼絲高空特技。", "45 min"],
+    ["08/07", "12:15", "Pastry Extravaganza｜甜點糕點狂歡盛宴", "Deck 9 · Americana Diner", "熱門限量甜點很快取完，建議提早抵達", "烘焙團隊準備種類豐富、造型精緻且數量有限的甜點、蛋糕與派塔。", "30 min"],
+    ["08/07", "12:15", "Behind The Seas: Life Below Decks｜海洋幕後秘辛：甲板底下的船員生活", "Deck 8 · Princess Arena", "與甜點盛宴同時段，請先選擇較想參加的一項", "由郵輪總監與船上團隊帶領，深入了解「船員專用」區域背後的郵輪生活與運作。", "45 min"],
   ];
 
   const dict = () => (window.TRIP_I18N && window.TRIP_I18N[lang]) || {};
@@ -482,7 +484,7 @@
       PINK_SHOW_SCHEDULE.forEach((item, index) => {
         const id = showRowId(item) + "_" + index;
         const [englishTitle, chineseTitle = "精選活動"] = item[2].split("｜");
-        const duration = item[2].includes("60th Anniversary") ? "60 min" : "45 min";
+        const duration = item[6];
         const card = document.createElement("article");
         card.className = "show-card";
         card.innerHTML = `
@@ -504,7 +506,7 @@
         group.className = "show-day-group";
         group.innerHTML = `<h5>${day} · 粉紅精選</h5>`;
         byDate[day].forEach(({ item, index, id }) => {
-          const duration = item[2].includes("60th Anniversary") ? "60 min" : "45 min";
+          const duration = item[6];
           const row = document.createElement("article");
           row.className = "show-row";
           row.innerHTML = `
